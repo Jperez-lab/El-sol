@@ -1,0 +1,85 @@
+---
+title: "El sol"
+author: "Camilo Pérez"
+date: "31/7/2020"
+output: html_document
+---
+![](C:/Users/User/projects/SOL/Imagenes/hidrogeno_helio.jpg)
+
+```{r}
+
+#SOL
+
+# VARIABLES
+
+UMA <- 1.661e-27 #kg
+MASA_PROTON <- 1.006998*UMA
+MASA_NEUTRON <- 1.008665*UMA
+MASA_HELIO <- 4.0026*UMA
+C<- 3e8
+
+```
+
+
+```{r}
+
+# la masa de cuatro protones es
+
+M4P<- 4*MASA_PROTON
+
+#Por lo tanto en una reacción nuclear en el Sol se tranforma una diferencia de masa que es igual a:
+DIFER_MASA<- M4P-MASA_HELIO
+
+
+```
+![](C:/Users/User/projects/SOL/Imagenes/EINSTEIN.jpg)
+```{r}
+#E= M*C^2
+E<- DIFER_MASA*C^2
+E
+```
+
+```{r}
+# curpo negro (ECUACION DE ESTEFAN BOLZTMAN)
+
+B<- 5.67e-8 
+TEMPERATURA<- 5770 
+INTENSIDAD<- B*TEMPERATURA^4  #w/m2k4
+
+# para el caso, T sera la temperatura del sol (fotosfera) 
+INTENSIDAD
+# la potencia generada por el sol esta dada por la formula POTENCIA<- INTENSIDAD*AREA
+
+# onde el area sera la superficie del casquete del sol:
+
+RADIO_SOL<- 6.96e8
+
+
+POTENCIA_SOL<- INTENSIDAD*(4*pi*RADIO_SOL^2)
+POTENCIA_SOL # JUL/s
+
+
+```
+![](C:/Users/User/projects/SOL/Imagenes/Reaccion_nulear.jpg)
+```{r}
+
+# Cuantas reacciones nucleares se generan en 1seg en el sol?
+
+# en una reaccion nuclear se genera 3.79585e-12 jul
+#  la potencia del Sol que es de 3.825733e+26 jul
+
+REACCIONES_NUCLARES_SOL<- POTENCIA_SOL/E
+
+
+
+```
+
+
+```{r}
+#CUANTA MASA DEL SOL SE QEUMA EN 1 SEGUNDO ?
+  
+  
+  
+
+
+```
