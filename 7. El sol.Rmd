@@ -4,6 +4,11 @@ author: "Camilo Pérez"
 date: "31/7/2020"
 output: html_document
 ---
+
+![](C:/Users/User/projects/7. El sol/sol.jpg)
+
+La luz y el calor que percibimos del Sol es el resultado de estas reacciones nucleares de fusión: núcleos de hidrógeno chocan entre sí, y se fusionan dando lugar a un núcleo más pesado de helio liberando una enorme cantidad de energía.
+
 ![](C:/Users/User/projects/SOL/Imagenes/hidrogeno_helio.jpg)
 
 ```{r}
@@ -25,38 +30,41 @@ C<- 3e8
 
 # la masa de cuatro protones es
 
-M4P<- 4*MASA_PROTON
+M4P<- 4*MASA_PROTON # = 6.690495e-27 kg
 
 #Por lo tanto en una reacción nuclear en el Sol se tranforma una diferencia de masa que es igual a:
-DIFER_MASA<- M4P-MASA_HELIO
+DIFER_MASA<- M4P-MASA_HELIO # = 4.217611e-29
 
 
 ```
-![](C:/Users/User/projects/SOL/Imagenes/EINSTEIN.jpg)
+![](C:/Users/User/projects/7. El sol/einstein.jpg)
+
+La energía (E) es igual a la masa (M) multiplicada por el cuadrado de la velocidad de la luz (C²)
+
 ```{r}
 #E= M*C^2
-E<- DIFER_MASA*C^2
-E
+E<- DIFER_MASA*C^2 #= 3.79585e-12 # Jul
 ```
+La ley de Stefan-Boltzmann establece que un cuerpo negro emite radiación térmica con una potencia emisiva hemisférica total (W/m²) proporcional a la cuarta potencia de su temperatura:
 
 ```{r}
 # curpo negro (ECUACION DE ESTEFAN BOLZTMAN)
 
-B<- 5.67e-8 
-TEMPERATURA<- 5770 
-INTENSIDAD<- B*TEMPERATURA^4  #w/m2k4
+B<- 5.67e-8 # constante de ESTEFAN BOLZTMAN
+TEMPERATURA<- 5770 # grados kelvin
+INTENSIDAD<- B*TEMPERATURA^4  # = 62847255 w/m2
 
 # para el caso, T sera la temperatura del sol (fotosfera) 
-INTENSIDAD
-# la potencia generada por el sol esta dada por la formula POTENCIA<- INTENSIDAD*AREA
 
-# onde el area sera la superficie del casquete del sol:
+# la potencia generada por el Sol esta dada por la formula POTENCIA<- INTENSIDAD*AREA
 
-RADIO_SOL<- 6.96e8
+# Donde el area sera la superficie del casquete esferico del sol:
+
+RADIO_SOL<- 6.96e8 # metros
 
 
-POTENCIA_SOL<- INTENSIDAD*(4*pi*RADIO_SOL^2)
-POTENCIA_SOL # JUL/s
+POTENCIA_SOL<- INTENSIDAD*(4*pi*RADIO_SOL^2) #=3.825733e+26 Jul/s
+
 
 
 ```
@@ -76,10 +84,30 @@ REACCIONES_NUCLARES_SOL<- POTENCIA_SOL/E
 
 
 ```{r}
-#CUANTA MASA DEL SOL SE QEUMA EN 1 SEGUNDO ?
-  
-  
-  
+#CUANTA MASA DEL SOL SE QUEMA EN UN SEGUNDO ?
+
+# Si en una reaccion se quema 4.217611e-29 kg
+# Cuanta masa se quemara en 1.007873e+38 reacciones/seg
+
+MS_UN_SEGUNDO<- REACCIONES_NUCLARES_SOL*DIFER_MASA # =4250814422 reac/seg
 
 
 ```
+![](C:/Users/User/projects/7. El sol/explosion.jpg)
+```{r}
+# SI LA MASA DEL SOL ES DE 1.99e30 kg
+
+MS<-  1.99e30 # Y se queman 4250814422kg/s
+
+#EL TIEMPO DE VIDA DEL SOL (TVS) SERA
+
+TVS<- MS/MS_UN_SEGUNDO #=4.681456e+20 seg
+
+#QUE EN AÑOS SERA IGUAL A:
+
+TVS_YEAR<- TVS/(60*60*24*365)  #  = 14,84 billones de años
+
+
+
+```
+
